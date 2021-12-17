@@ -18,7 +18,7 @@ import br.com.be3HealthTech.cadastroPaciente.model.Convenio;
 import br.com.be3HealthTech.cadastroPaciente.repository.ConvenioRepository;
 
 @RestController
-@RequestMapping("/convenio")
+@RequestMapping("/convenios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ConvenioController {
     

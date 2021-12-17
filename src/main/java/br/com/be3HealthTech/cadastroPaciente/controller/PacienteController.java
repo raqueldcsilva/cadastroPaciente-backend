@@ -31,16 +31,7 @@ public class PacienteController {
 		
 	}
 	
-	@GetMapping("/{cpf}")
-	public ResponseEntity<Paciente> findByCpf(@PathVariable long cpf) {
 		
-		return pacienteRepository.findByCpf(cpf)
-			.map(resp -> ResponseEntity.ok(resp))
-			.orElse(ResponseEntity.notFound().build());
-		
-	}
-	
-	
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Paciente>> getByTitulo(@PathVariable String nome){
 		
@@ -58,10 +49,8 @@ public class PacienteController {
 	
 	
 	@PutMapping
-	public ResponseEntity<Paciente> putPostagem (@RequestBody Paciente paciente){
-
+	public ResponseEntity<Paciente> putPostagem(@RequestBody Paciente paciente) {
 		return ResponseEntity.status(HttpStatus.OK).body(pacienteRepository.save(paciente));
-
 	}
 			
 	

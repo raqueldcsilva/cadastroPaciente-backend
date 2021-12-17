@@ -52,12 +52,7 @@ public class Paciente {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("convenio")
-	private Convenio convenio;
-	
-	private long numeroConvenio;
-	
-	
-	//getters and setters
+	private Convenio convenio;//getters and setters
 
 	public long getId() {
 		return id;
@@ -139,12 +134,6 @@ public class Paciente {
 		this.convenio = convenio;
 	}
 
-	public long getNumeroConvenio() {
-		return numeroConvenio;
-	}
-
-	public void setNumeroConvenio(long numeroConvenio) {
-		this.numeroConvenio = numeroConvenio;
-	}
+	
 			
 }
