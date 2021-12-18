@@ -1,7 +1,6 @@
 package br.com.be3HealthTech.cadastroPaciente.model;
 
-import java.time.LocalDate;
-
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,7 +38,7 @@ public class Paciente {
 	@Column(name = "data_nascimento")
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message = "O atributo Data de Nascimento é Obrigatório!")
-	private LocalDate dataNascimento;
+	private Date dataNascimento;
 
 	private String genero;
 	
@@ -52,7 +51,9 @@ public class Paciente {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("convenio")
-	private Convenio convenio;//getters and setters
+	private Convenio convenio;
+	
+	//getters and setters
 
 	public long getId() {
 		return id;
@@ -86,11 +87,11 @@ public class Paciente {
 		this.sobrenome = sobrenome;
 	}
 
-	public LocalDate getDataNascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(LocalDate dataNascimento) {
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
