@@ -31,7 +31,13 @@ public class PacienteController {
 		
 	}
 	
-		
+	@GetMapping("/{id}")
+	public ResponseEntity<Paciente> getById(@PathVariable long id){
+		return pacienteRepository.findById(id)
+				.map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.notFound().build());
+	}
+			
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Paciente>> getByTitulo(@PathVariable String nome){
 		

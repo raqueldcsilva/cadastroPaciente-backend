@@ -24,9 +24,9 @@ public class Convenio {
 	@NotNull
 	private String nome;
 
-	@OneToMany(mappedBy = "convenio", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "convenio", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("convenio")
-	private List <Paciente> paciente;
+	private List<Paciente> paciente;
 
 	public long getId() {
 		return id;
